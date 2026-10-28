@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast Widget</title>
+
+    <link rel="stylesheet" href="./dist/output.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body class="min-h-screen flex flex-col justify-center py-10 px-4 bg-gradient-to-br from-blue-800 via-indigo-900 to-purple-950 text-white">
+
+<!-- Background glow effects -->
+
+<div class="fixed top-10 left-10 w-72 h-72 bg-blue-300/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+<div class="fixed bottom-10 right-10 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+<main class="w-full max-w-6xl 2xl:max-w-[1600px] mx-auto">
+
+<!-- Weather heading -->
+
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-2">Weather Forecast</h1>
+
+            <h2 id="city" class="text-xl mt-3">
+                Calgary, Alberta
+            </h2>
+        </header>
+
+<!-- Temperature toggle-->
+
+    <div class="flex justify-center mb-8">
+    <button
+    id="tempToggle"
+    class="bg-white/20 backdrop-blur-lg border border-white/30 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-white/30 transition-all duration-300 cursor-pointer">Switch to °F
+    </button>
+    </div>
+
+<!-- Loading Message -->
+
+    <p id="status" class="text-center mb-6"> 
+    Loading weather forecast...
+    </p>
+
+<!-- current weather -->
+ <div class="grid grid-cols-1 2xl:grid-cols-[2fr_3fr] gap-6 items-start w-full">
+
+<section id="currentWeather" class="w-full min-w-0 px-2 sm:px-4 mb-8 xl:mb-0">
+
+    <div class="bg-white/15 backdrop-blur-lg border border-white/30 rounded-3xl p-8 text-white text-center shadow-xl">
+
+        <h2 class="text-2xl font-bold mb-4">
+            Current Weather
+        </h2>
+
+        <div id="currentWeatherContent" class="text-2xl font-bold mb-4">
+            <p>Loading current weather...</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Hourly Forecast -->
+
+<section class="w-full mt-10 px-2 sm:px-4">
+
+    <h2 class="text-2xl font-bold mb-6 text-center">
+        Today's Hourly Forecast
+    </h2>
+
+    <div
+        id="hourlyForecast"
+        class="flex gap-4 overflow-x-auto pb-4">
+    </div>
+
+</section>
+
+<!-- Forecast cards -->
+
+    <section
+    id="forecast"
+    class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 w-full min-w-0">
+</section>
+    </div>
+</main>
+</body>
+</html>
